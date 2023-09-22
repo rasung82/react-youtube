@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import {Outlet} from 'react-router-dom'
+import SearchHeader from "./components/SearchHeader";
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import './App.css';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000*60*10,
+      refetchOnWindowFocus: false
+    }
+  }
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <SearchHeader />
+      <QueryClientProvider client={queryClient}>
+        <Outlet />
+      </QueryClientProvider>
+    </>
   );
 }
 
