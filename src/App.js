@@ -2,6 +2,7 @@ import {Outlet} from 'react-router-dom'
 import SearchHeader from "./components/SearchHeader";
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import './App.css';
+import {YoutubeApiProvider} from "./context/YoutubeApiContext";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -15,10 +16,12 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <>
-      <SearchHeader />
-      <QueryClientProvider client={queryClient}>
-        <Outlet />
-      </QueryClientProvider>
+      <SearchHeader/>
+      <YoutubeApiProvider>
+        <QueryClientProvider client={queryClient}>
+          <Outlet/>
+        </QueryClientProvider>
+      </YoutubeApiProvider>
     </>
   );
 }
