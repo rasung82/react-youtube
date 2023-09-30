@@ -10,7 +10,6 @@ export default function ChannelInfo({id, name}) {
   } = useQuery(['channel', id], () => {
     return youtube.getChannelInfo(id)
   })
-  console.log('R)..', channels)
 
   return (
     <>

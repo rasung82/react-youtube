@@ -5,7 +5,8 @@ import RelatedVideos from "../components/RelatedVideos";
 export default function VideoDetail() {
   const {state: {video}} = useLocation();
   const {title, channelId, channelTitle, description} = video.snippet;
-  console.log('R)..', video);
+
+
 
   return (
     <section className='flex flex-col lg:flex-row'>
