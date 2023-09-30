@@ -20,6 +20,8 @@ export default class YoutubeDataApi {
           part: 'snippet',
           maxResults: '25',
           type: 'video',
+          regionCode: 'KR',
+          relevanceLanguage: 'ko',
           q: keyword
         }
       })
@@ -34,7 +36,9 @@ export default class YoutubeDataApi {
         params: {
           part: 'snippet',
           maxResults: '25',
-          chart: 'mostPopular'
+          chart: 'mostPopular',
+          regionCode: 'KR',
+          relevanceLanguage: 'ko'
         }
       })
       .then(res => res.data.items)
