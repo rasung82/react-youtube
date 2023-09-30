@@ -17,6 +17,7 @@ export default function VideoDetail() {
           height="640"
           src={`https://www.youtube.com/embed/${video.id}`}
           allowFullScreen
+          title={title}
         />
         <div className='p-8'>
           <h2 className='text-xl font-bold'>{title}</h2>
