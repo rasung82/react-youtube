@@ -15,6 +15,7 @@ export default function Videos() {
     // FIXME: 매번 호출 시 인스턴스 생성하여 내부 로직이 노출되고 있다. --> Context 우산을 쓰여준다 ?
     // const youtube = new YoutubeDataApi();
     // return youtube.search(keyword);
+
     // FIXME: Context를 이용한다 !
     return youtube.search(keyword);
   })
